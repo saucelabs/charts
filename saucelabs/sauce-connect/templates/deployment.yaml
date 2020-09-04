@@ -30,36 +30,36 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command: ["/sc"]
-          args: ["-l-", "-i", "{{ .Values.tunnelID }}", "--no-remove-colliding-tunnels", "-s"]
+          args: ["-l-", "-i", "{{ .Values.tunnelID }}", "--no-remove-colliding-tunnels", "-s", "-f", "/tmp/sc.ready"]
           env:          
           - name: "SAUCE_USERNAME"
             valueFrom:
               secretKeyRef:
                 key:  sauce_username
-                name: {{ .Release.Name }}-auth
+                name: {{ .Chart.Name }}-auth
           - name: "SAUCE_ACCESS_KEY"
             valueFrom:
               secretKeyRef:
                 key:  sauce_access_key
-                name: {{ .Release.Name }}-auth
+                name: {{ .Chart.Name }}-auth
           ports:
             - name: http
               containerPort: 8888
               protocol: TCP
           livenessProbe:
-            httpGet:
-              host: 127.0.0.1
-              path: /debug/vars
-              port: http
-            initialDelaySeconds: 300
-            periodSeconds: 30
+            exec:
+              command:
+                - cat
+                - /tmp/sc.ready
+            initialDelaySeconds: 10
+            periodSeconds: 5
           readinessProbe:
-            httpGet:
-              host: 127.0.0.1
-              path: /debug/vars
-              port: http
-            initialDelaySeconds: 300
-            periodSeconds: 30
+            exec:
+              command:
+                - cat
+                - /tmp/sc.ready
+            initialDelaySeconds: 10
+            periodSeconds: 5
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}

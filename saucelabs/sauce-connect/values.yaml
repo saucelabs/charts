@@ -7,8 +7,8 @@ HATunnels: 2
 tunnelID: "mytunnel"
 
 image:
-  repository: quay.io/saucelabs/sauce-connect-docker
-  tag: 4.6.2 
+  repository: saucelabs/sauce-connect
+  tag: 4.6.2 # or "4.6.2-alpine-glibc"
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
