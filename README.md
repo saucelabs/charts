@@ -22,6 +22,10 @@ $ helm search repo saucelabs
 $ helm install my-release saucelabs/<chart>
 ```
 
+Here is an example on how to install the Sauce Connect chart:
+
+![Installing a chart](.github/assets/demo.gif)
+
 ## Development
 
 To add a new repository or run a chart locally, you first need to clone the repo:
