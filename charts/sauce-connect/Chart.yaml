@@ -10,3 +10,7 @@ description: |
     ```
 name: sauce-connect
 version: 4.6.2
+home: http://github.com/saucelabs/charts
+maintainers:
+  - name: Open Source Program Office
+    email: opensource@saucelabs.com
