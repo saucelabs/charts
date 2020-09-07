@@ -1,8 +1,11 @@
 CHART=saucelabs/sauce-connect
 CREDS=--set sauce_username=${SAUCE_USERNAME} --set sauce_access_key=${SAUCE_ACCESS_KEY}
 
-sauce-connect-dry-run:
-	helm install ${CREDS} ${CHART} --dry-run --debug ${CHART}
+dry-run:
+	helm install ${CREDS} saucelabs/${chart} --dry-run --debug saucelabs/${chart}
 
-sauce-connect-install:
-	helm install --generate-name ${CREDS} ${CHART}
+install:
+	helm install --generate-name ${CREDS} saucelabs/${chart}
+
+docs:
+	helm-docs
