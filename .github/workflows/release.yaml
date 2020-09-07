@@ -17,6 +17,13 @@ jobs:
         run: |
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+      - name: Update Readme
+        run: |
+          git fetch --all
+          git checkout gh-pages
+          git rebase master
+          git push origin master -f
+          git checkout master
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@master
         env:
