@@ -51,14 +51,14 @@ spec:
               command:
                 - cat
                 - /tmp/sc.ready
-            initialDelaySeconds: 10
+            initialDelaySeconds: 30
             periodSeconds: 5
           readinessProbe:
             exec:
               command:
                 - cat
                 - /tmp/sc.ready
-            initialDelaySeconds: 10
+            initialDelaySeconds: 30
             periodSeconds: 5
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
