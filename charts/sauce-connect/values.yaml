@@ -9,7 +9,8 @@ tunnelID: "mytunnel"
 
 image:
   repository: saucelabs/sauce-connect
-  tag: 4.6.2 # or "4.6.2-alpine-glibc"
+  # image.tag -- define Sauce Connect Docker image e.g. "4.6.2" or "4.6.2-alpine-glibc"
+  tag: 4.6.2
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
