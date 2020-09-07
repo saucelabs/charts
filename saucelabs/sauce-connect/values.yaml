@@ -2,8 +2,9 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-# Setting HATunnel to more than 1 will run The tunnels in HA mode
+# HATunnels -- Setting HATunnel to more than 1 will run The tunnels in HA mode
 HATunnels: 2
+# tunnelID -- Sauce Connect tunnel identifier
 tunnelID: "mytunnel"
 
 image:
@@ -16,10 +17,9 @@ nameOverride: "sauce-connect"
 fullnameOverride: "sauce-connect"
 
 serviceAccount:
-  # Specifies whether a service account should be created
+  # serviceAccount.create -- Specifies whether a service account should be created
   create: true
-  # The name of the service account to use.
-  # If not set and create is true, a name is generated using the fullname template
+  # serviceAccount.name -- The name of the service account to use. If not set and create is true, a name is generated using the fullname template
   name:
 
 podSecurityContext: {}
