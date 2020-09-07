@@ -8,6 +8,9 @@ Popular applications, provided by Sauce Labs, ready to launch on Kubernetes usin
 To work with this repository the following tools are required:
 
 - [`helm-docs`](https://github.com/norwoodj/helm-docs#available-templates) - to automate chart documentations (install via `brew install norwoodj/tap/helm-docs` or from [source](https://github.com/norwoodj/helm-docs#installation))
+- [`chart-testing`](https://github.com/helm/chart-testing) - tool for testing Helm charts (install via `brew install chart-testing`)
+- [Yamale](https://github.com/23andMe/Yamale) - requirement for chart-testing
+- [yamllint](https://github.com/adrienverge/yamllint) - requirement for chart-testing
 
 ## Install Chart
 
@@ -15,7 +18,7 @@ To add Sauce Labs curated Helm charts to your repo list just run:
 
 ```sh
 $ helm repo add saucelabs https://opensource.saucelabs.com/charts
-$ helm search repo bitnami
+$ helm search repo saucelabs
 $ helm install my-release saucelabs/<chart>
 ```
 

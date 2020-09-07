@@ -9,3 +9,6 @@ install:
 
 docs:
 	helm-docs
+
+test:
+	ct lint --config ./.github/ct.yaml
