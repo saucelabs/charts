@@ -2,7 +2,21 @@
 
 ![Version: 4.6.2](https://img.shields.io/badge/Version-4.6.2-informational?style=flat-square) ![AppVersion: 1.0](https://img.shields.io/badge/AppVersion-1.0-informational?style=flat-square)
 
-Helm chart for Sauce Connect on K8s
+Helm chart for Sauce Connect on K8s. To install chart run:
+
+```sh
+$ helm repo add saucelabs https://opensource.saucelabs.com/charts
+$ helm search repo saucelabs
+$ helm install sc-release saucelabs/sauce-connect
+```
+
+**Homepage:** <http://github.com/saucelabs/charts>
+
+## Maintainers
+
+| Name | Email | Url |
+| ---- | ------ | --- |
+| saucelabs | opensource@saucelabs.com | https://opensource.saucelabs.com |
 
 ## Values
 
@@ -13,7 +27,7 @@ Helm chart for Sauce Connect on K8s
 | fullnameOverride | string | `"sauce-connect"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"saucelabs/sauce-connect"` |  |
-| image.tag | string | `"4.6.2"` |  |
+| image.tag | string | `"4.6.2"` | define Sauce Connect Docker image e.g. "4.6.2" or "4.6.2-alpine-glibc" |
 | imagePullSecrets | list | `[]` |  |
 | ingress.annotations | object | `{}` |  |
 | ingress.enabled | bool | `false` |  |
@@ -24,6 +38,8 @@ Helm chart for Sauce Connect on K8s
 | nodeSelector | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
 | resources | object | `{}` |  |
+| sauce_access_key | string | `"your-accesskey"` | your Sauce Labs access key |
+| sauce_username | string | `"your-username"` | your Sauce Labs username |
 | securityContext | object | `{}` |  |
 | service.port | int | `8888` |  |
 | service.type | string | `"ClusterIP"` |  |
