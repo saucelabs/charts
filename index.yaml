@@ -1,0 +1,25 @@
+apiVersion: v1
+entries:
+  sauce-connect:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-09-07T11:39:58.536250828Z"
+    description: |
+      Helm chart for Sauce Connect on K8s. To install chart run:
+
+      ```sh
+      $ helm repo add saucelabs https://opensource.saucelabs.com/charts
+      $ helm search repo saucelabs
+      $ helm install sc-release saucelabs/sauce-connect
+      ```
+    digest: 416d18a31ebd7b42f41a111bf5dd88654cc91ab370bf106de967b32bff81b3ce
+    home: http://github.com/saucelabs/charts
+    maintainers:
+    - email: opensource@saucelabs.com
+      name: saucelabs
+      url: https://opensource.saucelabs.com
+    name: sauce-connect
+    urls:
+    - https://github.com/saucelabs/charts/releases/download/sauce-connect-4.6.2/sauce-connect-4.6.2.tgz
+    version: 4.6.2
+generated: "2020-09-07T11:39:58.38923049Z"
